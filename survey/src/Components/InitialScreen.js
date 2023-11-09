@@ -1,6 +1,12 @@
-import React from 'react'
+import React from 'react';
+import '../App.css';
+import img1 from '../images/really happy.png'
+import img2 from '../images/happiness.png'
+import img3 from '../images/sceptic.png'
+import img4 from '../images/sad-face.png'
+import img5 from '../images/angry.png'
+import img6 from '../images/sunrise-software-logo-pos.jpg'
 import { Container, Grid, Paper, Box, Typography, TextField } from "@mui/material";
-import AnimateHeight from 'react-animate-height';
 //this is the importing of Material UI
 //This is the initial screen page in the components folder
 
@@ -12,7 +18,9 @@ function InitialScreen() {
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
         <Container>
         <Box sx={{display: 'flex'}}>
-      <Paper sx={{height:158, width:170,}}>Logo</Paper>
+      <Paper sx={{height:158, width:170,}}>
+      <img src={img6} style={{height: 158, width: 170}} alt=''/>
+      </Paper>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
         <Typography variant='h3' sx={{my:6, mx: 6}}>Welcome to Our Sunrise Survey</Typography>
         </Box>
@@ -42,19 +50,29 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
 {/* The Paper element here is for the emotive faces the user will pick */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>1</Paper>
+                <Paper sx={{height:158, width:170}}>
+                  <img src={img1} style={{height: 158, width: 170}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>2</Paper>
+                <Paper sx={{height:158, width:170}}>
+                <img src={img2} style={{height: 158, width: 170}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>3</Paper>
+                <Paper sx={{height:158, width:170}}>
+                <img src={img3} style={{height: 158, width: 170}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>4</Paper>
+                <Paper sx={{height:158, width:170}}>
+                <img src={img4} style={{height: 158, width: 170}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>5</Paper>
+                <Paper sx={{height:158, width:170}}>
+                <img src={img5} style={{height: 158, width: 170}} alt=''/>
+                </Paper>
             </Grid>
         </Grid>
         <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />
