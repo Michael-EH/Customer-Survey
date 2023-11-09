@@ -1,15 +1,21 @@
 import React from 'react'
 import { Container, Grid, Paper, Box, Typography, TextField } from "@mui/material";
+import AnimateHeight from 'react-animate-height';
 //this is the importing of Material UI
 //This is the initial screen page in the components folder
+
+
 
 function InitialScreen() {
   return (
     <div>
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
         <Container>
+        <Box sx={{display: 'flex'}}>
+      <Paper sx={{height:158, width:170,}}>Logo</Paper>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
-        <Typography variant='h3' sx={{my:4}}>Welcome to Our Sunrise Survey</Typography>
+        <Typography variant='h3' sx={{my:6, mx: 6}}>Welcome to Our Sunrise Survey</Typography>
+        </Box>
         <hr/>
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
         <Typography paragraph sx={{my:4, mx: 2}}>Ipsum non ex proident elit deserunt laboris sit minim ad eu nostrud officia id voluptate. Et ex ipsum enim consequat. Incididunt ea culpa et tempor officia occaecat et. Dolor nisi irure ullamco id. Nostrud cupidatat tempor mollit irure incididunt qui excepteur incididunt. Irure sit labore consequat labore Lorem velit. Et et nostrud minim minim excepteur tempor.
@@ -24,13 +30,13 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
         flexWrap: 'wrap',
         '& > :not(style)': {
           m: 3,
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
         },
       }}
     >
 {/* The Paper element creates square like designs. These will be used for the box that acts as the background for the faces and submit button */}
       <Paper elevation={3} sx={{p:3, width: 1028,
-          height: 328,}}>
+          height: 328,}} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)'}}>
         <Grid container sx={{m:3, gap:4, pb: 3}}>
 {/* The Grid element from MuI is also like the regular Grid element which ceates columns to organise the placement of the faces */}
 {/* The Paper element here is for the emotive faces the user will pick */}
@@ -54,7 +60,6 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
         <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />
       </Paper>
     </Box>
-           
         </Container>
     </div>
   )
