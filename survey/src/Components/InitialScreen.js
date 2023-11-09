@@ -21,13 +21,13 @@ function InitialScreen() {
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
         <Container>
         <Box sx={{display: 'flex'}}>
-      <Paper sx={{height:158, width:170,}}>
-      <img src={img6} style={{height: 158, width: 170}} alt=''/>
+      <Paper sx={{height:98, width:110}} elevation={3}>
+      <img src={img6} style={{height: 98, width: 110}} alt=''/>
       </Paper>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
         <Typography variant='h3' sx={{my:6, mx: 6}}>Welcome to Our Sunrise Survey</Typography>
         </Box>
-        <hr/>
+        <hr style={{color:'black', border: '1px solid black'}}/>
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
         <Typography paragraph sx={{my:4, mx: 2}}>Ipsum non ex proident elit deserunt laboris sit minim ad eu nostrud officia id voluptate. Et ex ipsum enim consequat. Incididunt ea culpa et tempor officia occaecat et. Dolor nisi irure ullamco id. Nostrud cupidatat tempor mollit irure incididunt qui excepteur incididunt. Irure sit labore consequat labore Lorem velit. Et et nostrud minim minim excepteur tempor.
 
