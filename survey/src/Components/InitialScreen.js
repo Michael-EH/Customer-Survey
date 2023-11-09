@@ -7,7 +7,10 @@ import img4 from '../images/sad-face.png'
 import img5 from '../images/angry.png'
 import img6 from '../images/sunrise-software-logo-pos.jpg'
 import { Container, Grid, Paper, Box, Typography, TextField } from "@mui/material";
+import {motion} from 'framer-motion'
 //this is the importing of Material UI
+//this is the importing of all the images
+//imported framer motion
 //This is the initial screen page in the components folder
 
 
@@ -47,32 +50,33 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
           height: 328,}} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)'}}>
         <Grid container sx={{m:3, gap:4, pb: 3}}>
 {/* The Grid element from MuI is also like the regular Grid element which ceates columns to organise the placement of the faces */}
-{/* The Paper element here is for the emotive faces the user will pick */}
+{/* Replaced Paper element with simple divs for the emotive faces the user will pick */}
+{/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>
+                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
                   <img src={img1} style={{height: 158, width: 170}} alt=''/>
-                </Paper>
+                </motion.div>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>
+                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
                 <img src={img2} style={{height: 158, width: 170}} alt=''/>
-                </Paper>
+                </motion.div>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>
+                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
                 <img src={img3} style={{height: 158, width: 170}} alt=''/>
-                </Paper>
+                </motion.div>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>
+                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
                 <img src={img4} style={{height: 158, width: 170}} alt=''/>
-                </Paper>
+                </motion.div>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper sx={{height:158, width:170}}>
+                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
                 <img src={img5} style={{height: 158, width: 170}} alt=''/>
-                </Paper>
+                </motion.div>
             </Grid>
         </Grid>
         <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />
