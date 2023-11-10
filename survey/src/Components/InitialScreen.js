@@ -50,33 +50,33 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
           height: 328,}} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)'}}>
         <Grid container sx={{m:3, gap:4, pb: 3}}>
 {/* The Grid element from MuI is also like the regular Grid element which ceates columns to organise the placement of the faces */}
-{/* Replaced Paper element with simple divs for the emotive faces the user will pick */}
+{/* Re-implemented Paper element and figured out how to connect muI with framer motion for the emotive faces the user will pick */}
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
             <Grid item xs={12} sm={6} md={2}>
-                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                  <img src={img1} style={{height: 158, width: 170}} alt=''/>
-                </motion.div>
+                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
+                  <img src={img1} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img2} style={{height: 158, width: 170}} alt=''/>
-                </motion.div>
+                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
+                <img src={img2} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img3} style={{height: 158, width: 170}} alt=''/>
-                </motion.div>
+                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
+                <img src={img3} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img4} style={{height: 158, width: 170}} alt=''/>
-                </motion.div>
+                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
+                <img src={img4} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
+                </Paper>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <motion.div whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img5} style={{height: 158, width: 170}} alt=''/>
-                </motion.div>
+                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
+                <img src={img5} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
+                </Paper>
             </Grid>
         </Grid>
         <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />
