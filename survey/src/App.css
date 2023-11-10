@@ -39,9 +39,93 @@
 
 .App video {
   position: absolute;
-  z-index: -1;
+  z-index: -10;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
 }
+
+.cardBg {
+  --bg-color:rgb(20, 20, 20);
+  --card-color: rgb(147, 143, 143);
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 916px;
+  width: calc(100% - 20px);
+}
+
+#cards:hover > .card > .card-border {
+  opacity: 1;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  height: 158px;
+  position: relative;
+  width: 170px;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::before,
+.card > .card-border {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  position: absolute;
+  top: 0px;
+  opacity: 0;
+  transition: opacity 500ms;
+  left: 0px;
+  width: 100%;
+  border-radius: inherit;
+  content: '';
+  height: 100%;
+  z-index: 2;
+}
+
+.card::before {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
+  z-index: 3;
+}
+
+.card > .card-border {
+  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.3), transparent 40%);
+  z-index: 1;
+}
+
+.card > .card-content {
+  background-color: var(--card-color);
+  border-radius: inherit;
+  height: calc(100% - 2px);
+  margin: 1px;
+  padding: relative;
+  width: calc(100% - 2px);
+  z-index: 2;
+}
+
+
+
+
+.imgBox {
+  width: 500px;
+  margin: 15% auto 0;
+}
+
+.single-Box {
+  position: relative;
+  width: 500px;
+  height: 320px;
+  transition: .5s;
+  overflow: hidden;
+  border-radius: 25px;
+  border: 1px solid black;
+}
+
