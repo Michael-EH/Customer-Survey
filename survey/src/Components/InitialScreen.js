@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../App.css';
 import SpecialText from './SpecialText';
 import img1 from '../images/really happy.png'
@@ -7,7 +7,7 @@ import img3 from '../images/sceptic.png'
 import img4 from '../images/sad-face.png'
 import img5 from '../images/angry.png'
 import img6 from '../images/sunrise-software-logo-pos.jpg'
-import { Container, Grid, Paper, Box, Typography, TextField } from "@mui/material";
+import { Container, Grid, Paper, Box, Typography, TextField, Button } from "@mui/material";
 import {motion} from 'framer-motion'
 import SpecialCard from './SpecialCard';
 //this is the importing of Material UI
@@ -18,6 +18,10 @@ import SpecialCard from './SpecialCard';
 
 
 function InitialScreen() {
+  const [showComment, setShowComment] = useState(false);
+  function toggle() {
+    setShowComment((showComment) => !showComment);
+  }
   return (
     <div>
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
@@ -48,15 +52,14 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
       }}
     >
 {/* The Paper element creates square like designs. These will be used for the box that acts as the background for the faces and submit button */}
-      <Paper elevation={3} sx={{p:3, width: 1028,
-          height: 328,}} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)'}}>
+      <Paper elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px', margin: '20px 95px'}}>
         <Grid container sx={{m:3, gap:4, pb: 3}}>
 {/* The Grid element from MuI is also like the regular Grid element which ceates columns to organise the placement of the faces */}
 {/* Re-implemented Paper element and figured out how to connect muI with framer motion for the emotive faces the user will pick */}
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
             <Grid item xs={12} sm={6} md={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img1} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
@@ -68,7 +71,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
   </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img2} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
@@ -80,7 +83,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
   </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img3} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
@@ -92,7 +95,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
   </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img4} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
@@ -104,7 +107,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
   </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img5} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
@@ -116,9 +119,10 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
   </motion.a>
             </Grid>
         </Grid>
-        <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />
+        {showComment && <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />}
+        {showComment &&<Button variant="outlined" sx={{mt: 2}}>SUBMIT</Button>}
       </Paper>
-      <SpecialCard/>
+      {/*<SpecialCard/>*/}
     </Box>
         </Container>
     </div>
