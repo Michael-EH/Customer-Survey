@@ -56,29 +56,64 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
             <Grid item xs={12} sm={6} md={2}>
-                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                  <img src={img1} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
-                </Paper>
+            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+    <img src={img1} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
+    <div class="dimmer"></div>
+    <div className="ISgo-corner" href="#">
+      <div className="ISgo-arrow">
+        →
+      </div>
+    </div>
+  </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img2} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
-                </Paper>
+            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+    <img src={img2} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
+    <div class="dimmer"></div>
+    <div className="ISgo-corner" href="#">
+      <div className="ISgo-arrow">
+        →
+      </div>
+    </div>
+  </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img3} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
-                </Paper>
+            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+    <img src={img3} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
+    <div class="dimmer"></div>
+    <div className="ISgo-corner" href="#">
+      <div className="ISgo-arrow">
+        →
+      </div>
+    </div>
+  </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img4} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
-                </Paper>
+            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+    <img src={img4} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
+    <div class="dimmer"></div>
+    <div className="ISgo-corner" href="#">
+      <div className="ISgo-arrow">
+        →
+      </div>
+    </div>
+  </motion.a>
             </Grid>
             <Grid item xs={12} sm={6} md={2}>
-                <Paper component={motion.div} whileTap={{scale: 0.9}} whileHover={{scale: 1.1}} transition={{layout: {duration: 1, type: 'spring'}}} style={{height:158, width:170}}>
-                <img src={img5} style={{height: 138, width: 150, marginTop: 10}} alt=''/>
-                </Paper>
+            <motion.a whileTap={{scale:0.9}} className="IScard" href="#">
+    <img src={img5} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
+    <div class="dimmer"></div>
+    <div className="ISgo-corner" href="#">
+      <div className="ISgo-arrow">
+        →
+      </div>
+    </div>
+  </motion.a>
             </Grid>
         </Grid>
         <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />
