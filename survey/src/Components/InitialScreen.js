@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import SpecialText from './SpecialText';
 import img1 from '../images/really happy.png'
 import img2 from '../images/happiness.png'
 import img3 from '../images/sceptic.png'
@@ -25,7 +26,7 @@ function InitialScreen() {
       <img src={img6} style={{height: 38, width: 38}} alt=''/>
       </Paper>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
-        <Typography variant='h3' sx={{my:6, mx: 6}}>Welcome to Our Sunrise Survey</Typography>
+        <Typography variant='h3' sx={{my:6, mx: 6}}><SpecialText /></Typography>
         </Box>
         <hr style={{color:'black', border: '1px solid black'}}/>
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}

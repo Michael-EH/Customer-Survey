@@ -129,3 +129,6 @@
   border: 1px solid black;
 }
 
+span {
+  display: inline-block;
+}
