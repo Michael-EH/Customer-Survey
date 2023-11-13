@@ -9,6 +9,7 @@ import img5 from '../images/angry.png'
 import img6 from '../images/sunrise-software-logo-pos.jpg'
 import { Container, Grid, Paper, Box, Typography, TextField } from "@mui/material";
 import {motion} from 'framer-motion'
+import SpecialCard from './SpecialCard';
 //this is the importing of Material UI
 //this is the importing of all the images
 //imported framer motion
@@ -82,6 +83,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
         </Grid>
         <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />
       </Paper>
+      <SpecialCard/>
     </Box>
         </Container>
     </div>
