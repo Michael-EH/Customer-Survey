@@ -28,7 +28,7 @@ function InitialScreen() {
         <Container>
         <Box sx={{display: 'flex'}}>
       <Paper sx={{height:38, width:38}} elevation={3}>
-      <img src={img6} style={{height: 38, width: 38}} alt=''/>
+      <img className='logo' src={img6} style={{height: 38, width: 38}} alt=''/>
       </Paper>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
         <Typography variant='h3' sx={{my:6, mx: 6}}><SpecialText /></Typography>

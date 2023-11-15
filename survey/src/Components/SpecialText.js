@@ -6,7 +6,7 @@ import TextSpan from '../Components/TextSpan';
 function SpecialText() {
     const sentence = 'Welcome To Our Sunrise Survey'.split('');
   return (
-    <div style={{marginTop: '1rem', fontSize: '3rem', display: 'inline-block'}}>{sentence.map((letter, index) =>{
+    <div className='SpecText' style={{marginTop: '1rem', fontSize: '3rem', display: 'inline-block'}}>{sentence.map((letter, index) =>{
         return(
             <TextSpan key={index}>
                 {letter === ' ' ? '\u00A0' : letter}

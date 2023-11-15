@@ -133,7 +133,9 @@ span {
   display: inline-block;
 }
 
-
+.SpecText {
+  padding: 10px 120px;
+}
 
 
 
