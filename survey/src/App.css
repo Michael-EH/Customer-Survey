@@ -46,88 +46,8 @@
   height: 100%;
 }
 
-.cardBg {
-  --bg-color:rgb(20, 20, 20);
-  --card-color: rgb(147, 143, 143);
-}
 
-#cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  max-width: 916px;
-  width: calc(100% - 20px);
-}
-
-#cards:hover > .card > .card-border {
-  opacity: 1;
-}
-
-.card {
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  cursor: pointer;
-  height: 158px;
-  position: relative;
-  width: 170px;
-}
-
-.card:hover::before {
-  opacity: 1;
-}
-
-.card::before,
-.card > .card-border {
-  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
-  position: absolute;
-  top: 0px;
-  opacity: 0;
-  transition: opacity 500ms;
-  left: 0px;
-  width: 100%;
-  border-radius: inherit;
-  content: '';
-  height: 100%;
-  z-index: 2;
-}
-
-.card::before {
-  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.06), transparent 40%);
-  z-index: 3;
-}
-
-.card > .card-border {
-  background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y), rgba(255, 255, 255, 0.3), transparent 40%);
-  z-index: 1;
-}
-
-.card > .card-content {
-  background-color: var(--card-color);
-  border-radius: inherit;
-  height: calc(100% - 2px);
-  margin: 1px;
-  padding: relative;
-  width: calc(100% - 2px);
-  z-index: 2;
-}
-
-
-
-
-.imgBox {
-  width: 500px;
-  margin: 15% auto 0;
-}
-
-.single-Box {
-  position: relative;
-  width: 500px;
-  height: 320px;
-  transition: .5s;
-  overflow: hidden;
-  border-radius: 25px;
-  border: 1px solid black;
-}
+/***************************Speciaal Text Css******************************/
 
 span {
   display: inline-block;
@@ -140,6 +60,7 @@ span {
 
 
 
+/****************************Special Cards CSS********************************/
 
 
 .container {
@@ -151,38 +72,6 @@ span {
   justify-content: center;
 }
 
-.specialCardh3 {
-  color: #262626;
-  font-size: 17px;
-  line-height: 24px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.small {
-    font-size: 14px;
-  }
-
-.go-corner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  background-color: royalblue;
-  border-radius: 0 4px 0 32px;
-}
-
-.go-arrow {
-  margin-top: -4px;
-  margin-right: -4px;
-  color: white;
-  font-family: courier, sans;
-}
 
 .Scard1 {
   display: block;
@@ -333,3 +222,24 @@ span {
   }
 }
 
+/***********Thank You Section Css********************/
+
+.ThankDiv {
+  width: 50%;
+  display: block;
+  justify-content: center;
+  text-align: center;
+  padding: 0px 240px;
+}
+
+.Hyper{
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1rem, 2vw, 3rem);
+  color: black;
+  padding: 0rem clamp(1rem, 1vw, 3rem);
+  border-radius: clamp(0.4rem, 0.75vw, 1rem);
+}
+
+.Hyper:hover {
+  color: red;
+}

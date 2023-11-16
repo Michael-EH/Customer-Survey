@@ -10,6 +10,7 @@ import img6 from '../images/sunrise-software-logo-pos.jpg'
 import { Container, Grid, Paper, Box, Typography, TextField, Button } from "@mui/material";
 import {motion} from 'framer-motion'
 import SpecialCard from './SpecialCard';
+import ThankScreen from './ThankScreen';
 //this is the importing of Material UI
 //this is the importing of all the images
 //imported framer motion
@@ -21,6 +22,14 @@ function InitialScreen() {
   const [showComment, setShowComment] = useState(false);
   function toggle() {
     setShowComment((showComment) => !showComment);
+  }
+  const [showContainer, setShowContainer] = useState(true);
+  function throttle() {
+    setShowContainer((showContainer) => !showContainer)
+  }
+  const [showThanksMessage, setShowThanksMessage] = useState(false);
+  function congratulate() {
+    setShowThanksMessage((showThanksMessage) => !showThanksMessage)
   }
   return (
     <div>
@@ -53,12 +62,12 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
     >
 {/* The Paper element creates square like designs. These will be used for the box that acts as the background for the faces and submit button */}
       <Paper elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px', margin: '20px 95px'}}>
-        <Grid container sx={{m:3, gap:4, pb: 3}}>
+      {showContainer && <Grid container sx={{m:3, gap:4, pb: 3}}>
 {/* The Grid element from MuI is also like the regular Grid element which ceates columns to organise the placement of the faces */}
 {/* Re-implemented Paper element and figured out how to connect muI with framer motion for the emotive faces the user will pick */}
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
-            <Grid item xs={12} sm={6} md={2}>
+ <Grid item xs={12} sm={6} md={2}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img1} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
@@ -118,9 +127,10 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
     </div>
   </motion.a>
             </Grid>
-        </Grid>
-        {showComment && <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />}
-        {showComment &&<Button variant="outlined" sx={{mt: 2}}>SUBMIT</Button>}
+        </Grid>}
+        {showComment && showContainer && <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />}
+        {showComment && showContainer && <Button variant="outlined" sx={{mt: 2}} onClick={() => {throttle(); congratulate();}}>SUBMIT</Button>}
+      {showThanksMessage && <ThankScreen />}
       </Paper>
       {/*<SpecialCard/>*/}
     </Box>
