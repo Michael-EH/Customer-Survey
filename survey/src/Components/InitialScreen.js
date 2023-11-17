@@ -11,6 +11,7 @@ import { Container, Grid, Paper, Box, Typography, TextField, Button } from "@mui
 import {motion} from 'framer-motion'
 import SpecialCard from './SpecialCard';
 import ThankScreen from './ThankScreen';
+import ErrorScreen from './ErrorScreen';
 //this is the importing of Material UI
 //this is the importing of all the images
 //imported framer motion
@@ -31,24 +32,26 @@ function InitialScreen() {
   function congratulate() {
     setShowThanksMessage((showThanksMessage) => !showThanksMessage)
   }
+  const [showError404, setShowError404] = useState(false);
+  function error() {
+    setShowError404((showError404) => !showError404)
+  }
   return (
     <div>
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
+      <img className='logo' src={img6} alt=''/>
         <Container>
         <Box sx={{display: 'flex'}}>
-      <Paper sx={{height:38, width:38}} elevation={3}>
-      <img className='logo' src={img6} style={{height: 38, width: 38}} alt=''/>
-      </Paper>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
-        <Typography variant='h3' sx={{my:6, mx: 6}}><SpecialText /></Typography>
+        {showContainer && <Typography variant='h3' sx={{my:6, mx: 6}}><SpecialText /></Typography>}
         </Box>
-        <hr style={{color:'black', border: '1px solid black'}}/>
+        {showContainer && <hr style={{color:'black', border: '1px solid black'}}/>}
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
-        <Typography paragraph sx={{my:4, mx: 2}}>Ipsum non ex proident elit deserunt laboris sit minim ad eu nostrud officia id voluptate. Et ex ipsum enim consequat. Incididunt ea culpa et tempor officia occaecat et. Dolor nisi irure ullamco id. Nostrud cupidatat tempor mollit irure incididunt qui excepteur incididunt. Irure sit labore consequat labore Lorem velit. Et et nostrud minim minim excepteur tempor.
+        {showContainer && <Typography paragraph sx={{my:4, mx: 2}}>Ipsum non ex proident elit deserunt laboris sit minim ad eu nostrud officia id voluptate. Et ex ipsum enim consequat. Incididunt ea culpa et tempor officia occaecat et. Dolor nisi irure ullamco id. Nostrud cupidatat tempor mollit irure incididunt qui excepteur incididunt. Irure sit labore consequat labore Lorem velit. Et et nostrud minim minim excepteur tempor.
 
 Voluptate esse reprehenderit proident reprehenderit Lorem consectetur. Sint amet ullamco proident esse non. Excepteur eiusmod minim duis pariatur nulla cupidatat culpa aliqua enim anim do. Ad sit adipisicing adipisicing cillum.
 
-Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat quis fugiat sit aute pariatur enim incididunt nisi ex. Aliqua reprehenderit incididunt aliqua voluptate in ullamco aliquip nulla tempor.</Typography>
+Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat quis fugiat sit aute pariatur enim incididunt nisi ex. Aliqua reprehenderit incididunt aliqua voluptate in ullamco aliquip nulla tempor.</Typography>}
 {/* The Box component is a generic, theme-aware container with access to CSS utilities from MUI System. Its currently wrapping the Paper and Grid elements */}
         <Box
       sx={{
@@ -128,8 +131,10 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
   </motion.a>
             </Grid>
         </Grid>}
-        {showComment && showContainer && <TextField id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />}
-        {showComment && showContainer && <Button variant="outlined" sx={{mt: 2}} onClick={() => {throttle(); congratulate();}}>SUBMIT</Button>}
+        {showComment && showContainer && <TextField sx={{mt: -2}} id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />}
+        {showError404 && <ErrorScreen/>}
+        {showComment && showContainer && <Button variant="outlined" sx={{mt: 2, mx: 2}} onClick={() => {throttle(); congratulate();}}>SUBMIT</Button>}
+        {showComment && showContainer && <Button variant="outlined" sx={{mt: 2}} onClick={() => {throttle(); error();}}>error</Button>}
       {showThanksMessage && <ThankScreen />}
       </Paper>
       {/*<SpecialCard/>*/}
