@@ -11,6 +11,7 @@ import { Container, Grid, Paper, Box, Typography, TextField, Button } from "@mui
 import {motion} from 'framer-motion'
 import ThankScreen from './ThankScreen';
 import ErrorScreen from './ErrorScreen';
+import SecondErrorScreen from './SecondErrorScreen';
 //this is the importing of Material UI
 //this is the importing of all the images
 //imported framer motion
@@ -35,6 +36,10 @@ function InitialScreen() {
   function error() {
     setShowError404((showError404) => !showError404)
   }
+  const [showError202, setShowError202] = useState(false);
+  function error202() {
+    setShowError202((showError202) => !showError202)
+  }
   return (
     <div>
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
@@ -46,7 +51,7 @@ function InitialScreen() {
         </Box>
         {showContainer && <hr style={{color:'black', border: '1px solid black'}}/>}
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
-        {showContainer && <Typography paragraph sx={{my:4, mx: 2}}>Ipsum non ex proident elit deserunt laboris sit minim ad eu nostrud officia id voluptate. Et ex ipsum enim consequat. Incididunt ea culpa et tempor officia occaecat et. Dolor nisi irure ullamco id. Nostrud cupidatat tempor mollit irure incididunt qui excepteur incididunt. Irure sit labore consequat labore Lorem velit. Et et nostrud minim minim excepteur tempor.
+        {showContainer && <Typography xs={12} sm={6} md={2} paragraph sx={{my:4, mx: 2}}>Ipsum non ex proident elit deserunt laboris sit minim ad eu nostrud officia id voluptate. Et ex ipsum enim consequat. Incididunt ea culpa et tempor officia occaecat et. Dolor nisi irure ullamco id. Nostrud cupidatat tempor mollit irure incididunt qui excepteur incididunt. Irure sit labore consequat labore Lorem velit. Et et nostrud minim minim excepteur tempor.
 
 Voluptate esse reprehenderit proident reprehenderit Lorem consectetur. Sint amet ullamco proident esse non. Excepteur eiusmod minim duis pariatur nulla cupidatat culpa aliqua enim anim do. Ad sit adipisicing adipisicing cillum.
 
@@ -132,11 +137,12 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
         </Grid>}
         {showComment && showContainer && <TextField sx={{mt: -2}} id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />}
         {showError404 && <ErrorScreen/>}
+        {showError202 && <SecondErrorScreen/>}
+        {showComment && showContainer && <Button variant="outlined" sx={{mt: 2}} onClick={() => {throttle(); error202();}}>error 202</Button>}
         {showComment && showContainer && <Button variant="outlined" sx={{mt: 2, mx: 2}} onClick={() => {throttle(); congratulate();}}>SUBMIT</Button>}
-        {showComment && showContainer && <Button variant="outlined" sx={{mt: 2}} onClick={() => {throttle(); error();}}>error</Button>}
+        {showComment && showContainer && <Button variant="outlined" sx={{mt: 2}} onClick={() => {throttle(); error();}}>error 404</Button>}
       {showThanksMessage && <ThankScreen />}
       </Paper>
-      {/*<SpecialCard/>*/}
     </Box>
         </Container>
     </div>
