@@ -55,8 +55,10 @@
 }
 @media only screen and (max-width: 600px) {
   .logo {
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
+    float: left;
+    display: none;
   }
 }
 
@@ -68,15 +70,40 @@ span {
 
 .SpecText {
   padding: 10px 120px;
+  margin-top: 1rem; 
+  font-size: 1.3rem;
+  display: inline-block;
 }
 @media only screen and (max-width: 600px) {
   .SpecText {
-    font-size: 3px;
+    font-size: 10px;
     padding: 10px 20px;
+    display: flex;
+    margin: 0px;
   }
 }
 
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+.specbox {
+  margin: 0px 10px;
+  margin-bottom: -4rem;
+}
+}
 
+.ipsum {
+  font-size: 10px;
+  color: black;
+  margin: 4px 2px;
+}
+
+@media only screen and (max-device-width: 600px) and (orientation: landscape) {
+  .ipsum {
+    font-size: 10px;
+    color: red;
+    margin: 90px 10px;
+    margin: 15px 10px;
+  }
+}
 /****************************Special Cards CSS********************************/
 
 
@@ -227,10 +254,18 @@ span {
 
 @media only screen and (max-width: 600px) {
   .IScard {
-    height: 40px;
-    width: 40px;
+    height: 20px;
+    width: 20px;
+    display: none;
   }
 }
+@media only screen and (max-width: 600px) {
+  .card-div {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 
 .IScard:hover {
   .ISsmall {
@@ -251,9 +286,26 @@ span {
 
 @media only screen and (max-width: 600px) {
   .emotive {
-    height: 20px;
-    width: 20px;
+    height: 1px;
+    width: 1px;
   }
+}
+
+@media only screen and (max-width: 600px) and (orientation: portrait) {
+.cardcontainer {
+  padding: 10px 10px;
+  margin: 0px;
+  height: 100%;
+  width: 20%;
+}
+}
+
+@media only screen and (max-width: 600px) and (orientation: landscape) {
+.grid-container {
+  padding: 10px 50px;
+  margin: 0px;
+  width: 3px;
+}
 }
 /***********Thank You Section Css********************/
 
@@ -277,7 +329,30 @@ span {
   color: red;
 }
 
+.button-container {
+  display: flex;
+  justify-content: center;
+ align-items: center;
+}
 
+
+@media only screen and (max-width: 600px) {
+.button-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+}
+@media only screen and (max-width: 600px) {
+.button-div {
+}
+}
+@media only screen and (max-width: 600px) {
+.button-design {
+  width: 6rem;
+  font-size: .5rem;
+}
+}
 /*****************************Error Screens CSS*****************************/
 
 
