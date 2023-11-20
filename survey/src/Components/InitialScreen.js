@@ -9,7 +9,6 @@ import img5 from '../images/angry.png'
 import img6 from '../images/sunrise-software-logo-pos.jpg'
 import { Container, Grid, Paper, Box, Typography, TextField, Button } from "@mui/material";
 import {motion} from 'framer-motion'
-import SpecialCard from './SpecialCard';
 import ThankScreen from './ThankScreen';
 import ErrorScreen from './ErrorScreen';
 //this is the importing of Material UI
