@@ -74,9 +74,9 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
 {/* Re-implemented Paper element and figured out how to connect muI with framer motion for the emotive faces the user will pick */}
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
- <Grid item xs={12} sm={6} md={2}>
+ <Grid item xs={12} sm={8} md={2}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img src={img1} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    <img className='emotive' src={img1} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
     <div className="ISgo-corner" href="#">

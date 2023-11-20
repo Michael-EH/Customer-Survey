@@ -192,6 +192,7 @@ span {
   z-index: 0;
   overflow: hidden;
   border: 1px solid #f2f8f9;
+  
 
 
   &:hover {
@@ -223,6 +224,14 @@ span {
   }
 }
 
+
+@media only screen and (max-width: 600px) {
+  .IScard {
+    height: 40px;
+    width: 40px;
+  }
+}
+
 .IScard:hover {
   .ISsmall {
     transition: all 0.3s ease-out;
@@ -239,6 +248,13 @@ span {
   }
 }
 
+
+@media only screen and (max-width: 600px) {
+  .emotive {
+    height: 20px;
+    width: 20px;
+  }
+}
 /***********Thank You Section Css********************/
 
 .ThankDiv {
