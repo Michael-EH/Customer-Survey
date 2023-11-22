@@ -68,15 +68,15 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
       }}
     >
 {/* The Paper element creates square like designs. These will be used for the box that acts as the background for the faces and submit button */}
-      <Paper className='cardcontainer' elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px', margin: '20px 95px'}}>
-      {showContainer && <Grid container sx={{m:3, gap:4, pb: 3}} className='grid-container'>
 {/* The Grid element from MuI is also like the regular Grid element which ceates columns to organise the placement of the faces */}
 {/* Re-implemented Paper element and figured out how to connect muI with framer motion for the emotive faces the user will pick */}
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
- <Grid item xs={12} sm={8} md={2}>
+      <Paper className='cardcontainer' elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px'}}>
+      {showContainer && <Grid container direction='row' sx={{m:3, gap:4, pb: 3}} className='grid-container'>
+ <Grid item lg={2} sm={4} xs={3}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img className='emotive' src={img1} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    <img src={img1} className='emotion' style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
     <div className="ISgo-corner" href="#">
@@ -86,7 +86,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
     </div>
   </motion.a>
             </Grid>
-            <Grid item xs={12} sm={6} md={2}>
+            <Grid item lg={2} sm={4} xs={2}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img2} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
@@ -98,7 +98,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
     </div>
   </motion.a>
             </Grid>
-            <Grid item xs={12} sm={6} md={2}>
+            <Grid item lg={2} sm={4} xs={2}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img3} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
@@ -110,7 +110,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
     </div>
   </motion.a>
             </Grid>
-            <Grid item xs={12} sm={6} md={2}>
+            <Grid item lg={2} sm={4} xs={2}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img4} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
@@ -122,7 +122,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
     </div>
   </motion.a>
             </Grid>
-            <Grid item xs={12} sm={6} md={2}>
+            <Grid item lg={2} sm={4} xs={2}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img5} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
