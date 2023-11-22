@@ -72,7 +72,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
 {/* Re-implemented Paper element and figured out how to connect muI with framer motion for the emotive faces the user will pick */}
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
-      <Paper className='cardcontainer' elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px'}}>
+      <Paper className='cardcontainer' elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px', width: '100%'}}>
       {showContainer && <Grid container direction='row' sx={{m:3, gap:4, pb: 3}} className='grid-container'>
  <Grid item lg={2} sm={4} xs={3}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
