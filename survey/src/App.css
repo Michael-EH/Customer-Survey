@@ -97,25 +97,20 @@ span {
 }
 
 .SpecText {
-  padding: 10px 120px;
   margin-top: 1rem; 
   font-size: 1.3rem;
-  display: inline-block;
 }
 @media only screen and (max-device-width: 600px) and (orientation:portrait) {
   .SpecText {
     font-size: 10px;
     padding: 10px 20px;
-    display: flex;
     margin: 0px;
   }
 }
 @media only screen and (min-device-width: 700px) and (max-device-width: 800px) and (orientation:portrait) {
   .SpecText {
     font-size: 20px;
-    padding: 10px 20px;
     display: flex;
-    margin: -10px;
   }
 }
 
@@ -445,3 +440,7 @@ span {
 }
 
 
+.FaceImage {
+  height: 50px;
+  width: 50px;
+}

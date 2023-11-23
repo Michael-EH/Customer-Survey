@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import SecConfig from '../SecConfig.json';
 import '../App.css';
 import SpecialText from './SpecialText';
 import img1 from '../images/really happy.png'
@@ -16,7 +17,6 @@ import SecondErrorScreen from './SecondErrorScreen';
 //this is the importing of all the images
 //imported framer motion
 //This is the initial screen page in the components folder
-
 
 
 function InitialScreen() {
@@ -40,22 +40,23 @@ function InitialScreen() {
   function error202() {
     setShowError202((showError202) => !showError202)
   }
+
   return (
     <div>
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
       <img className='logo' src={img6} alt=''/>
         <Container>
-        <Box className='specbox' sx={{display: 'flex'}}>
+        <Box className='specbox' sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
         {showContainer && <Typography xs={12} sm={6} md={2} variant='h3' sx={{my:6, mx: 6}}><SpecialText /></Typography>}
         </Box>
         {showContainer && <hr style={{color:'black', border: '1px solid black'}}/>}
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
-        {showContainer && <h3 className='ipsum' xs={12} sm={6} md={2} paragraph sx={{my:4, mx: 2}}>Ipsum non ex proident elit deserunt laboris sit minim ad eu nostrud officia id voluptate. Et ex ipsum enim consequat. Incididunt ea culpa et tempor officia occaecat et. Dolor nisi irure ullamco id. Nostrud cupidatat tempor mollit irure incididunt qui excepteur incididunt. Irure sit labore consequat labore Lorem velit. Et et nostrud minim minim excepteur tempor.
-
-Voluptate esse reprehenderit proident reprehenderit Lorem consectetur. Sint amet ullamco proident esse non. Excepteur eiusmod minim duis pariatur nulla cupidatat culpa aliqua enim anim do. Ad sit adipisicing adipisicing cillum.
-
-Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat quis fugiat sit aute pariatur enim incididunt nisi ex. Aliqua reprehenderit incididunt aliqua voluptate in ullamco aliquip nulla tempor.</h3>}
+        {showContainer && <div> 
+            <h3 className='ipsum' xs={12} sm={6} md={2} paragraph sx={{my:4, mx: 2}}>{
+        SecConfig[2].summary
+      }</h3> 
+          </div>}
 {/* The Box component is a generic, theme-aware container with access to CSS utilities from MUI System. Its currently wrapping the Paper and Grid elements */}
         <Box
       sx={{
@@ -76,7 +77,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
       {showContainer && <Grid container direction='row' sx={{m:3, gap:4, pb: 3}} className='grid-container'>
  <Grid item lg={2} sm={4} xs={3}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img className='FaceImage' src={img1} style={{height: 'auto', width: 100, marginTop: 10}} alt=''/>
+    <img className='FaceImage' src={SecConfig[0].icon} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
     <div className="ISgo-corner" href="#">
@@ -152,6 +153,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
       {showThanksMessage && <ThankScreen />}
       </Paper>
     </Box>
+    <h1 className='FaceImage'/>
         </Container>
     </div>
   )
