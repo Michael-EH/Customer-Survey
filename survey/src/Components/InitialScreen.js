@@ -76,7 +76,7 @@ Occaecat consectetur id elit cupidatat occaecat laborum in do enim. Cupidatat qu
       {showContainer && <Grid container direction='row' sx={{m:3, gap:4, pb: 3}} className='grid-container'>
  <Grid item lg={2} sm={4} xs={3}>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img className='emotion' height={98} src={img1} alt=''/>
+    <img className='FaceImage' src={img1} style={{height: 'auto', width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
     <div className="ISgo-corner" href="#">

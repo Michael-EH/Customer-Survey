@@ -230,11 +230,7 @@ span {
   }
 };
 
-.emotion {
-  height: 98px; 
-  width: 100px; 
-  margin-top: 10;
-}
+
 
 @media only screen and (max-device-width: 600px) and (orientation:portrait) {
   .IScard {
