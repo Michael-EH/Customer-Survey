@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import SecConfig from '../SecConfig.json';
+import SecConfig from './SecConfig.json';
+import { ImageData } from './ImageData';
 import '../App.css';
 import SpecialText from './SpecialText';
 import img1 from '../images/really happy.png'
@@ -8,7 +9,7 @@ import img3 from '../images/sceptic.png'
 import img4 from '../images/sad-face.png'
 import img5 from '../images/angry.png'
 import img6 from '../images/sunrise-software-logo-pos.jpg'
-import { Container, Grid, Paper, Box, Typography, TextField, Button } from "@mui/material";
+import { Container, Grid, Paper, Box, Typography, TextField, Button, Tooltip } from "@mui/material";
 import {motion} from 'framer-motion'
 import ThankScreen from './ThankScreen';
 import ErrorScreen from './ErrorScreen';
@@ -54,7 +55,7 @@ function InitialScreen() {
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
         {showContainer && <div> 
             <h3 className='ipsum' xs={12} sm={6} md={2} paragraph sx={{my:4, mx: 2}}>{
-        SecConfig[2].summary
+        ImageData[1].summary
       }</h3> 
           </div>}
 {/* The Box component is a generic, theme-aware container with access to CSS utilities from MUI System. Its currently wrapping the Paper and Grid elements */}
@@ -74,10 +75,11 @@ function InitialScreen() {
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
       <Paper className='cardcontainer' elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px', width: '100%'}}>
-      {showContainer && <Grid container direction='row' sx={{m:3, gap:4, pb: 3}} className='grid-container'>
- <Grid item lg={2} sm={4} xs={3}>
+      {showContainer && <Grid container direction='row' sx={{marginBottom: 3, gap:4, display: 'flex', justifyContent: 'center'}} className='grid-container'>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img className='FaceImage' src={SecConfig[0].icon} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+              <div>
+                    <img className='FaceImage' src={ImageData[0].url} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+              </div>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
     <div class="dimmer"></div>
     <div className="ISgo-corner" href="#">
@@ -86,44 +88,15 @@ function InitialScreen() {
       </div>
     </div>
   </motion.a>
-            </Grid>
-            <Grid item lg={2} sm={4} xs={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img src={img2} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
-    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
-    <div class="dimmer"></div>
-    <div className="ISgo-corner" href="#">
-      <div className="ISgo-arrow">
-        →
-      </div>
-    </div>
-  </motion.a>
-            </Grid>
-            <Grid item lg={2} sm={4} xs={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img src={img3} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
-    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
-    <div class="dimmer"></div>
-    <div className="ISgo-corner" href="#">
-      <div className="ISgo-arrow">
-        →
-      </div>
-    </div>
-  </motion.a>
-            </Grid>
-            <Grid item lg={2} sm={4} xs={2}>
-            <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <img src={img4} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
-    <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
-    <div class="dimmer"></div>
-    <div className="ISgo-corner" href="#">
-      <div className="ISgo-arrow">
-        →
-      </div>
-    </div>
-  </motion.a>
-            </Grid>
-            <Grid item lg={2} sm={4} xs={2}>
+  <Tooltip title={ImageData[0].tooltip3}>
+    <img src={ImageData[1].url} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    </Tooltip>
+    <Tooltip title={ImageData[0].tooltip2}>
+    <img src={ImageData[2].url} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    </Tooltip>
+    <Tooltip title={ImageData[0].tooltip4}>
+    <img src={ImageData[3].url} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+    </Tooltip>
             <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <img src={img5} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
     <p className="ISsmall">Card description with lots of great facts and interesting details.</p>
@@ -134,7 +107,6 @@ function InitialScreen() {
       </div>
     </div>
   </motion.a>
-            </Grid>
         </Grid>}
         {showComment && showContainer && <TextField sx={{mt: -2}} id="outlined-basic" label="Write your review here" variant="outlined" fullWidth />}
         {showError404 && <ErrorScreen/>}

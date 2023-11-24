@@ -1,5 +1,5 @@
 import '../App.css';
-import SecConfig from '../SecConfig.json';
+import SecConfig from './SecConfig.json';
 import '../Components/TextSpan';
 import React from 'react'
 import TextSpan from '../Components/TextSpan';
