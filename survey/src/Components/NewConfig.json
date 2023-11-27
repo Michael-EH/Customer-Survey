@@ -1,0 +1,28 @@
+{
+	"title" : "Hello Hello to Sunrise",
+	"summaryLine" : "Hello please complete the survey",
+	"RESTDetailsField" : "DETAILS",
+	"RESTSurveyListField" : "SURVEYSTATUS",
+    "FaceDetails": [
+        {
+            "ImageUrl": "Publicimages/really happyPublic.png",
+            "tooltip": "Really Happy face"
+        },
+        {
+            "ImageUrl": "Publicimages/happinessPublic.png",
+            "tooltip": "Happy face"
+        },
+        {
+            "ImageUrl": "Publicimages/scepticPublic.png",
+            "tooltip": "Sceptic"
+        },
+        {
+            "ImageUrl": "Publicimages/sad-facePublic.png",
+            "tooltip": "Sad"
+        },
+        {
+            "ImageUrl": "Publicimages/angryPublic.png",
+            "tooltip": "Angry"
+        }
+    ]
+}

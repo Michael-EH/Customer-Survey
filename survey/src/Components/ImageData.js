@@ -13,18 +13,7 @@ export const ImageData = [
         "RESTDetailsField": "",
         "RESTSurveyListField": "",
         "SostenutoURL": "",
-        url: require('../images/angry.png'),
     },
-    {
-        "title": "All alphabet in a sentence",
-        "summary": "The quick brown fox jumped over the lazy dog ",
-        url: require('../images/sceptic.png')
-    },
-    {
-        url: require('../images/happiness.png')
-    },
-    {
-        url: require('../images/sad-face.png')
-    }
+    
 
 ]
