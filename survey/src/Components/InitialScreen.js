@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import NewConfig from './NewConfig.json';
-import { ImageData } from './ImageData';
 import '../App.css';
 import SpecialText from './SpecialText';
-import img5 from '../images/angry.png'
 import img6 from '../images/sunrise-software-logo-pos.jpg'
 import { Container, Grid, Paper, Box, Typography, TextField, Button, Tooltip } from "@mui/material";
 import {motion} from 'framer-motion'
@@ -50,7 +48,7 @@ function InitialScreen() {
         {showContainer && <hr style={{color:'black', border: '1px solid black'}}/>}
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
         {showContainer && <div> 
-            <h3 className='ipsum' xs={12} sm={6} md={2} paragraph sx={{my:4, mx: 2}}>{
+            <h3 className='ipsum' xs={12} sm={6} md={2} paragraph sx={{my:2, mx: 2}}>{
         NewConfig.summaryLine
       }</h3> 
           </div>}
@@ -71,20 +69,20 @@ function InitialScreen() {
 {/* Implemented Framer Motion for hover effects */}
 {/* The Textfield element is meant for the user to type in their response. "Full width" is to extend the box since its short in width by default */}
       <Paper className='cardcontainer' elevation={3} style={{backgroundColor: 'rgba(255, 255, 255, 0.3)', backdropFilter: 'blur(3px)', padding: '30px 40px', width: '100%'}}>
-      {showContainer && <Grid container direction='row' sx={{marginBottom: 3, gap:4, display: 'flex', justifyContent: 'center'}} className='grid-container'>
+      {showContainer && <Grid container direction='row' className='grid-container'>
 
   {NewConfig.FaceDetails && NewConfig.FaceDetails.map(face => (
-     <motion.a whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
-    <Tooltip title={face.tooltip}>
-    <img src={face.ImageUrl} style={{height: 98, width: 100, marginTop: 10}} alt=''/>
+     <motion.div whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
+    <Tooltip title={face.tooltip} enterDelay={500} leaveDelay={300}>
+    <img className='faces' src={face.ImageUrl}  alt=''/>
     </Tooltip>
     <div class="dimmer"></div>
-    <div className="ISgo-corner" href="#">
+    <div className="ISgo-corner">
       <div className="ISgo-arrow">
         →
       </div>
     </div>
-    </motion.a>
+    </motion.div>
   ))}
 
         </Grid>}
@@ -105,7 +103,6 @@ function InitialScreen() {
       {showThanksMessage && <ThankScreen />}
       </Paper>
     </Box>
-    <h1 className='FaceImage'/>
         </Container>
     </div>
   )

@@ -3,6 +3,7 @@
 	"summaryLine" : "Hello please complete the survey",
 	"RESTDetailsField" : "DETAILS",
 	"RESTSurveyListField" : "SURVEYSTATUS",
+    "Logo" : "Publicimages/sunrise-logoPublic.png",
     "FaceDetails": [
         {
             "ImageUrl": "Publicimages/really happyPublic.png",
