@@ -3,26 +3,28 @@
 	"summaryLine" : "Hello please complete the survey",
 	"RESTDetailsField" : "DETAILS",
 	"RESTSurveyListField" : "SURVEYSTATUS",
-    "Logo" : "Publicimages/sunrise-logoPublic.png",
+    "Logo" : "Publicimages/sunrise-logoPublic.jpg",
+    "fontcolor": "green",
     "FaceDetails": [
         {
-            "ImageUrl": "Publicimages/really happyPublic.png",
-            "tooltip": "Really Happy face"
+            "ImageUrl": "Publicimages/face-smile-beam-regular.svg",
+            "tooltip": "Really Happy face",
+            "color": "red"
         },
         {
-            "ImageUrl": "Publicimages/happinessPublic.png",
+            "ImageUrl": "Publicimages/face-smile-regular.svg",
             "tooltip": "Happy face"
         },
         {
-            "ImageUrl": "Publicimages/scepticPublic.png",
+            "ImageUrl": "Publicimages/face-meh-regular.svg",
             "tooltip": "Sceptic"
         },
         {
-            "ImageUrl": "Publicimages/sad-facePublic.png",
+            "ImageUrl": "Publicimages/face-frown-regular.svg",
             "tooltip": "Sad"
         },
         {
-            "ImageUrl": "Publicimages/angryPublic.png",
+            "ImageUrl": "Publicimages/face-angry-regular.svg",
             "tooltip": "Angry"
         }
     ]

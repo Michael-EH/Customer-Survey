@@ -4,7 +4,7 @@ import '../App.css';
 import SpecialText from './SpecialText';
 import img6 from '../images/sunrise-software-logo-pos.jpg'
 import { Container, Grid, Paper, Box, Typography, TextField, Button, Tooltip } from "@mui/material";
-import {motion} from 'framer-motion'
+import {color, motion} from 'framer-motion'
 import ThankScreen from './ThankScreen';
 import ErrorScreen from './ErrorScreen';
 import SecondErrorScreen from './SecondErrorScreen';
@@ -39,16 +39,16 @@ function InitialScreen() {
   return (
     <div>
         {/*The container is an MuI component that contains the rest of the code inside and applies a certain width and height to the page, akin to a div element*/}
-      <img className='logo' src={img6} alt=''/>
+      <img className='logo' src={NewConfig.Logo} alt=''/>
         <Container>
         <Box className='specbox' sx={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
         {/*The Typography element is the header and paragraph wrapped in one, this particular line is for the title of the survey on the page */}
-        {showContainer && <Typography xs={12} sm={6} md={2} variant='h3' sx={{my:6, mx: 6}}><SpecialText /></Typography>}
+        {showContainer && <Typography xs={12} sm={6} md={2} variant='h3'><SpecialText /></Typography>}
         </Box>
         {showContainer && <hr style={{color:'black', border: '1px solid black'}}/>}
         {/*This is the short paragraph that uses lorem ipsum. Just do ctrl+shift+p to open the command pallete and type in ">lorem ipsum" */}
         {showContainer && <div> 
-            <h3 className='ipsum' xs={12} sm={6} md={2} paragraph sx={{my:2, mx: 2}}>{
+            <h3 className='ipsum' xs={12} sm={6} md={2} paragraph style={{color: NewConfig.fontcolor}} sx={{my:2, mx: 2}}>{
         NewConfig.summaryLine
       }</h3> 
           </div>}
@@ -74,7 +74,7 @@ function InitialScreen() {
   {NewConfig.FaceDetails && NewConfig.FaceDetails.map(face => (
      <motion.div whileTap={{scale:0.9}} className="IScard" onClick={toggle}>
     <Tooltip title={face.tooltip} enterDelay={500} leaveDelay={300}>
-    <img className='faces' src={face.ImageUrl}  alt=''/>
+    <img className='faces' src={face.ImageUrl} style={{color: face.color}}   alt=''/>
     </Tooltip>
     <div class="dimmer"></div>
     <div className="ISgo-corner">

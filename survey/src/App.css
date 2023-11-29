@@ -44,6 +44,7 @@
   left: 0;
   width: 100vw;
   height: 100%;
+  display: none;
 }
 
 @media only screen and (max-device-width: 900px) and (orientation:portrait) {
@@ -97,9 +98,9 @@ span {
 }
 
 .SpecText {
-  margin-top: 1rem; 
+  margin-top: 4rem; 
   display: flex;
-  margin-left: -4rem;
+  
 }
 .SpecText h2 {
   font-size: 3.3rem;
